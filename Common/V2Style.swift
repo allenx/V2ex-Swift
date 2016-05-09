@@ -45,8 +45,8 @@ class V2Style: NSObject {
             self._fontScale = scale
         }
         //监听主题配色，切换相应的配色
-        self.KVOController.observe(V2EXColor.sharedInstance, keyPath: "style", options: [.Initial,.New]) { _ in
-            self.remakeCSS()
+        self.thmemChangedHandler = {[weak self] (style) -> Void in
+            self?.remakeCSS()
         }
         
     }
@@ -93,3 +93,4 @@ struct V2FontSize {
     let labelName:String
     let defaultFontSize:Float
 }
+
