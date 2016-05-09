@@ -14,7 +14,9 @@ public typealias LoginSuccessHandel = (String) -> Void
 class LoginViewController: UIViewController {
 
     var successHandel:LoginSuccessHandel?
-
+    
+    
+    
     let backgroundImageView = UIImageView()
     let frostedView = UIVisualEffectView(effect: UIBlurEffect(style: .Dark))
     let userNameTextField = UITextField()
@@ -23,7 +25,7 @@ class LoginViewController: UIViewController {
     let cancelButton = UIButton()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.hideKeyboardWhenTappedAround()
         
         //初始化界面
@@ -141,6 +143,8 @@ extension LoginViewController {
 
         self.frostedView.frame = self.view.frame
         self.view.addSubview(self.frostedView)
+        
+        
 
         let vibrancy = UIVibrancyEffect(forBlurEffect: UIBlurEffect(style: .Dark))
         let vibrancyView = UIVisualEffectView(effect: vibrancy)
